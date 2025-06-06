@@ -29,6 +29,46 @@
         <img src=imágenes\ubicación.png>
     </div>
 </header>
+<script>
+let carrito = [];
+let total = 0;
+
+function toggleCarrito() {
+    const panel = document.getElementById("carrito");
+    panel.style.display = panel.style.display === "block" ? "none" : "block";
+}
+
+function agregarAlCarrito(nombre, precio) {
+    carrito.push({ nombre, precio });
+    total += precio;
+    actualizarCarrito();
+}
+
+function actualizarCarrito() {
+    const lista = document.getElementById("lista-carrito");
+    lista.innerHTML = "";
+    carrito.forEach((item, index) => {
+        const li = document.createElement("li");
+        li.innerHTML = `${item.nombre} - $${item.precio} <button onclick="eliminarDelCarrito(${index})">❌</button>`;
+        lista.appendChild(li);
+    });
+
+    document.getElementById("total").textContent = total;
+    document.getElementById("contador").textContent = carrito.length;
+}
+
+function eliminarDelCarrito(index) {
+    total -= carrito[index].precio;
+    carrito.splice(index, 1);
+    actualizarCarrito();
+}
+
+function vaciarCarrito() {
+    carrito = [];
+    total = 0;
+    actualizarCarrito();
+}
+</script>
 <body>
     <nav>
         <ol class="menu-horizontal">
@@ -38,6 +78,17 @@
             <li>Reseñas</li>
             <li><a href="#ubi">Donde encontrarnos</a></li>
         </ol>
+        <!-- Carrito (ícono y panel) -->
+<div class="carrito-container">
+  <button class="carrito-icono" onclick="toggleCarrito()">🛒 <span id="contador">0</span></button>
+  <div id="carrito" class="carrito-panel">
+    <h4>Tu carrito</h4>
+    <ul id="lista-carrito"></ul>
+    <p>Total: $<span id="total">0</span></p>
+    <button onclick="vaciarCarrito()">Vaciar carrito</button>
+  </div>
+</div>
+
     </nav>
     <br>
     
@@ -96,14 +147,14 @@
             <div class="fila">$15.000</div>
         </div>
       
-         <div class="columna botones">
-        <div class="fila"><button>Comprar</button></div>
-        <div class="fila"><button>Comprar</button></div>
-        <div class="fila"><button>Comprar</button></div>
-        <div class="fila"><button>Comprar</button></div>
-        <div class="fila"><button>Comprar</button></div>
-        <div class="fila"><button>Comprar</button></div>
-        <div class="fila"><button>Comprar</button></div>
+        <div class="columna botones">
+        <div class="fila"><button onclick="agregarAlCarrito('Hamburguesa doble y cerveza Quilmes', 10000)">Agregar al carrito</button></div>
+        <div class="fila"><button onclick="agregarAlCarrito('Hamburguesa doble con chedar y cerveza Brahma', 10500)">Agregar al carrito</button></div>
+        <div class="fila"><button onclick="agregarAlCarrito('Hamburguesa cuarto de libra y cerveza Isenbeck', 12000)">Agregar al carrito</button></div>
+        <div class="fila"><button onclick="agregarAlCarrito('Hamburguesa cuarto de libra y cerveza Miller', 12000)">Agregar al carrito</button></div>
+        <div class="fila"><button onclick="agregarAlCarrito('Hamburguesa clásica + papas y cerveza Schneider', 13500)">Agregar al carrito</button></div>
+        <div class="fila"><button onclick="agregarAlCarrito('Hamburguesa doble + papas y cerveza Miller', 14000)">Agregar al carrito</button></div>
+        <div class="fila"><button onclick="agregarAlCarrito('Hamburguesa cuarto de libra + papas y cerveza Corona', 15000)">Agregar al carrito</button></div>
     </div>
         <!-- columna con publicidad -->
         <div class="columna publicidad">
@@ -115,39 +166,40 @@
     <div class="promocion">
         <div class="texto">Hamburguesa doble y cerveza Quilmes</div>
         <div class="precio">$10.000</div>
-        <button>Comprar</button>
+        <button onclick="agregarAlCarrito('Hamburguesa doble y cerveza Quilmes', 10000)">Agregar al carrito</button>
     </div>
     <div class="promocion">
         <div class="texto">Hamburguesa doble con chedar y cerveza Brahma</div>
         <div class="precio">$10.500</div>
-        <button>Comprar</button>
+        <button onclick="agregarAlCarrito('Hamburguesa doble con chedar y cerveza Brahma', 10500)">Agregar al carrito</button>
     </div>
     <div class="promocion">
         <div class="texto">Hamburguesa cuarto de libra y cerveza Isenbeck</div>
         <div class="precio">$12.000</div>
-        <button>Comprar</button>
+        <button onclick="agregarAlCarrito('Hamburguesa cuarto de libra y cerveza Isenbeck', 12000)">Agregar al carrito</button>
     </div>
     <div class="promocion">
         <div class="texto">Hamburguesa cuarto de libra y cerveza Miller</div>
         <div class="precio">$12.000</div>
-        <button>Comprar</button>
+        <button onclick="agregarAlCarrito('Hamburguesa cuarto de libra y cerveza Miller', 12000)">Agregar al carrito</button>
     </div>
     <div class="promocion">
         <div class="texto">Hamburguesa clásica + papas y cerveza Schneider</div>
         <div class="precio">$13.500</div>
-        <button>Comprar</button>
+        <button onclick="agregarAlCarrito('Hamburguesa clásica + papas y cerveza Schneider', 13500)">Agregar al carrito</button>
     </div>
     <div class="promocion">
         <div class="texto">Hamburguesa doble + papas y cerveza Miller</div>
         <div class="precio">$14.000</div>
-        <button>Comprar</button>
+        <button onclick="agregarAlCarrito('Hamburguesa doble + papas y cerveza Miller', 14000)">Agregar al carrito</button>
     </div>
     <div class="promocion">
         <div class="texto">Hamburguesa cuarto de libra + papas y cerveza Corona</div>
         <div class="precio">$15.000</div>
-        <button>Comprar</button>
+        <button onclick="agregarAlCarrito('Hamburguesa cuarto de libra + papas y cerveza Corona', 15000)">Agregar al carrito</button>
     </div>
 </div>
+
 
    <br>
     <h3 id="ubi">Ubicación</h3>
