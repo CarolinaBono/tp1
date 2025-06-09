@@ -278,14 +278,14 @@ h3{
 
 @media (max-width: 768px) {
     .tabla img{
-        width: 10px;
-        height: auto;
+        width: 19.1em;
+        height: 15em;
     }
     header h1 {
         font-size: 1.2em;
-        position: static;
         transform: none;
-        margin: 10px auto;
+        margin: 10px;
+        bottom: 20px;
     }
 
     .claseteléfono, .clasedirección {
@@ -293,11 +293,13 @@ h3{
         transform: none;
         text-align: center;
         font-size: 4mm;
-        margin-top: 5px;
+        margin-top: 10px;
     }
 
     .teléfono img, .ubicación img {
         display: none;
+        left: 10px;
+        bottom: 40px;
     }
 
     .logo img {
@@ -386,6 +388,9 @@ h3{
 
     .footer-datos {
         text-align: center;
+    }
+    .carrito-icono{
+        left: 90px;
     }
 }
 .carrito-container {
