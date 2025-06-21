@@ -88,6 +88,7 @@ body {
     background-color: #f8f29b;
 }
 
+
 .container {
     display: flex;
     padding: 20px;
@@ -279,9 +280,8 @@ h3{
 
     .claseteléfono, .clasedirección {
         transform: none;
-        text-align: center;
+        text-align: right;
         font-size: 4mm;
-        margin-top: 10px;
         z-index: 1000;
         top: 5em;
     }
