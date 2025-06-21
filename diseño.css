@@ -286,15 +286,15 @@ h3{
     position: absolute;
     z-index: 1000;
     left: center;
-    top: 5px;
+    top: 5em;
     }
 
     .claseteléfono, .clasedirección {
         transform: none;
-        left: 10em;
+        left: 9em;
         font-size: 4mm;
         z-index: 1000;
-        top: 2em;
+        bottom: 2em;
     }
 
     .teléfono img, .ubicación img {
