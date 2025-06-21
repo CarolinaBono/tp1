@@ -280,7 +280,7 @@ h3{
 
     .claseteléfono, .clasedirección {
         transform: none;
-        right: 4em;
+        left: 10em;
         font-size: 4mm;
         z-index: 1000;
         top: 2em;
