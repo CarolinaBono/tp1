@@ -283,28 +283,54 @@ h3{
         height: 15em;
     }
     header h1 {
-    font-size: 1.5em;
+    font-size: 1.6em;
     color:#FADB68 ;
     text-align: center;
     position: absolute;
     z-index: 1000;
     left: center;
-    top: 4em;
+    top: 3em;
     }
 
-    .claseteléfono, .clasedirección {
-        transform: none;
-        left: 9em;
-        font-size: 4mm;
+        .claseteléfono, .clasedirección {
+        position: absolute;
         z-index: 1000;
-        top: 5px;
-        }
-
-    .teléfono img, .ubicación img {
-        display: none;
-        left: 10px;
-        bottom: 40px;
+        color: #FADB68;
+        font-size: 4mm;
+        font-family: 'Lucida Sans', sans-serif;
     }
+
+    .claseteléfono {
+        top: 2em;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .clasedirección {
+        top: 3.3em;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+
+        .teléfono img, .ubicación img {
+        display: block;
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        z-index: 1000;
+    }
+
+    .teléfono img {
+        top: 2.1em;
+        left: calc(50% - 100px); /* Ícono antes del número */
+    }
+
+    .ubicación img {
+        top: 3.4em;
+        left: calc(50% - 100px); /* Ícono antes de la dirección */
+    }
+
 
     .logo img {
         left: 1em;
