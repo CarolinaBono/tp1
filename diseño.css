@@ -311,6 +311,7 @@ h3{
     right: 1em;
 }
 
+
 .teléfono img, .ubicación img {
     display: block;
     position: absolute;
@@ -321,12 +322,12 @@ h3{
 
 .teléfono img {
     bottom: 5em;
-    right: -4.5em;
+    right: 7em;
 }
 
 .ubicación img {
     bottom: 4.5em;
-    right: -4.5em;
+    right: 7em;
 }
 
 
