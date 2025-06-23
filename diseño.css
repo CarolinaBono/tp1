@@ -292,28 +292,28 @@ h3{
     top: 3em;
     }
 
- /* Dentro del media query @media (max-width: 768px) */
-.claseteléfono, .clasedirección {
+.claseteléfono {/*Modificar contacto*/
     position: absolute;
-    z-index: 1000;
     color: #FADB68;
-    font-size: 4mm;
-    font-family: 'Lucida Sans', sans-serif;
-    display: flex;
-    align-items: center;
-    gap: 6px; /* espacio entre ícono y texto */
-    white-space: nowrap;
+    text-align: right;
+    z-index: 1000;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 7mm;
+    bottom: 2.5em;
+    right: 1.5em;
 }
 
-.claseteléfono {
-    bottom: 4.5em;
-    right: 1em;
+.clasedirección {/*Modificar dirección*/
+    position: absolute;
+    color: #FADB68;
+    text-align: right;
+    z-index: 1000;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 7mm;
+    bottom: 1em;
+    right: 1.5em;
 }
 
-.clasedirección {
-    bottom: 3em;
-    right: 1em;
-}
 
 .teléfono img, .ubicación img {
     display: block;
