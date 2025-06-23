@@ -314,12 +314,26 @@ h3{
     right: 1.5em;
 }
 
-
-.teléfono img, .ubicación img {
-    display: block;
+.teléfono img {
+    position: absolute;
+    left: auto;
+    right: 2em;
+    bottom: 6.5em;
     width: 18px;
     height: 18px;
+    z-index: 1000;
 }
+
+.ubicación img {
+    position: absolute;
+    left: auto;
+    right: 2em;
+    bottom: 4.5em;
+    width: 18px;
+    height: 18px;
+    z-index: 1000;
+}
+
 
 
 
